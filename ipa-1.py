@@ -6,6 +6,7 @@ This assignment will develop your basic familiarity with Python.
 '''
 
 def savings(gross_pay, tax_rate, expenses):
+    return int(((int(gross_pay)-(int(gross_pay) * float(tax_rate)) // 1)) - int(expenses))
     '''Savings.
     5 points.
 
@@ -33,10 +34,9 @@ def savings(gross_pay, tax_rate, expenses):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    def savings(gross_pay, tax_rate, expenses):
-        return int(((int(gross_pay)-(int(gross_pay) * float(tax_rate)) // 1)) - int(expenses))
-
+        
 def material_waste(total_material, material_units, num_jobs, job_consumption):
+    return str(total_material - (num_jobs * job_consumption)) + material_units
     '''Material Waste.
     5 points.
 
@@ -69,10 +69,10 @@ def material_waste(total_material, material_units, num_jobs, job_consumption):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    def material_waste(total_material, material_units, num_jobs, job_consumption):
-        return str(total_material - (num_jobs * job_consumption)) + material_units
+        
 
 def interest(principal, rate, periods):
+    return (principal + (principal + int((float(rate) * int(periods))))) // 1
     '''Interest.
     5 points.
 
@@ -100,10 +100,12 @@ def interest(principal, rate, periods):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    def interest(principal, rate, periods):
-        return (principal + (principal + int((float(rate) * int(periods))))) // 1
 
 def body_mass_index(weight, height):
+    weight_conv = float(weight * 0.45)
+    height_separated = list(height.split("'"))
+    height_conv = (int(height_separated[0]) * 0.3048) + (int(height_separated[1]) * 0.0254)
+    return float(weight_conv / (height_conv ** 2))
     '''Body Mass Index.
     5 points.
 
@@ -137,8 +139,3 @@ def body_mass_index(weight, height):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    def body_mass_index(weight, height):
-        weight_conv = float(weight * 0.45)
-        height_separated = list(height.split("'"))
-        height_conv = (int(height_separated[0]) * 0.3048) + (int(height_separated[1]) * 0.0254)
-        return float(weight_conv / (height_conv ** 2))
