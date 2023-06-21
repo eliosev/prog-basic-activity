@@ -6,6 +6,15 @@ This assignment will develop your proficiency with Python's control flows.
 '''
 
 def shift_letter(letter, shift):
+    list_of_alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+    if (letter in list_of_alphabet) == True:
+        for i in list_of_alphabet:
+            if list_of_alphabet.index(i) == (shift % 26):
+                return list_of_alphabet[(list_of_alphabet.index(letter) + shift) % 26]
+            else:
+                continue
+    else:
+        return " "
     '''Shift Letter.
     5 points.
 
@@ -62,6 +71,15 @@ def caesar_cipher(message, shift):
     pass
 
 def shift_by_letter(letter, letter_shift):
+    list_of_alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+    if (letter in list_of_alphabet) == True:
+        for i in list_of_alphabet:
+            if list_of_alphabet.index(i) == (list_of_alphabet.index(letter_shift) % 26):
+                return list_of_alphabet[(list_of_alphabet.index(letter) + list_of_alphabet.index(letter_shift)) % 26]
+            else:
+                continue
+    else:
+        return " "
     '''Shift By Letter.
     10 points.
 
