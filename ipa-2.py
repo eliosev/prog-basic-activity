@@ -49,6 +49,12 @@ def shift_letter(letter, shift):
     pass
 
 def caesar_cipher(message, shift):
+    for i,letter in enumerate(message):
+        if (letter in list_of_alphabet) == True:
+            return list_of_alphabet[(list_of_alphabet.index(letter) + shift) % 26], end=""
+            continue
+        else:
+            return " ", end=""
     '''Caesar Cipher.
     10 points.
 
