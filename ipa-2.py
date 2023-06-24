@@ -171,6 +171,19 @@ def vigenere_cipher(message, key):
     pass
 
 def scytale_cipher(message, shift):
+    i=0
+    cryptic_message_indexed=""
+    msg_added_underscores=""
+    if len(message) % shift == 0:
+        for i,characters in enumerate(message):
+            cryptic_message_indexed+=message[(i // shift) + (len(message) // shift) * (i % shift)]
+            i+=1
+    else:
+        msg_added_underscores = (message+"_"*((shift -(len(message)% shift))))
+        for i,characters in enumerate(msg_added_underscores):
+            cryptic_message_indexed+=msg_added_underscores[(i // shift) + (len(msg_added_underscores) // shift) * (i % shift)]
+            i+=1
+    return cryptic_message_indexed
     '''Scytale Cipher.
     15 points.
 
@@ -225,6 +238,13 @@ def scytale_cipher(message, shift):
     pass
 
 def scytale_decipher(message, shift):
+    i=0
+    deciphered_message_indexed=""
+    if len(message) % shift == 0:
+        for i,characters in enumerate(message):
+            deciphered_message_indexed+=message[(((i * shift) + (len(message) * shift) * (i // shift)) % len(message))+(i // (len(message) // shift))]
+            i+=1
+    return deciphered_message_indexed
     '''Scytale De-cipher.
     15 points.
 
