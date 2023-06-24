@@ -116,6 +116,28 @@ def shift_by_letter(letter, letter_shift):
     pass
 
 def vigenere_cipher(message, key):
+    list_of_alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+    letter_of_message_separated = ""
+    letter_of_key_separated = ""
+    x = 0
+    for i,letter in enumerate(message):
+        if (letter in list_of_alphabet) == True:
+            letter_of_message_separated += (list_of_alphabet[(list_of_alphabet.index(letter)) % 26])
+        else:
+            letter_of_message_separated += " "
+    for i,letters in enumerate(key):
+        if (letters in list_of_alphabet) == True:
+            letter_of_key_separated += str((list_of_alphabet.index(letters))) + " "
+            array_of_key = letter_of_key_separated.split()
+        else:
+            letter_of_key_separated += " "
+    while x < len(message):
+        if (letter_of_message_separated[x] in list_of_alphabet):
+            print(((list_of_alphabet[(list_of_alphabet.index(letter_of_message_separated[x]) + int((array_of_key[x % len(key)]))) % 26])), end="")
+        else:
+            print(" ", end="")
+        x+=1
+    return ""
     '''Vigenere Cipher.
     15 points.
 
