@@ -14,7 +14,7 @@ def shift_letter(letter, shift):
             else:
                 continue
     else:
-        return " "
+        return ""
     '''Shift Letter.
     5 points.
 
@@ -49,12 +49,14 @@ def shift_letter(letter, shift):
     pass
 
 def caesar_cipher(message, shift):
+    list_of_alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
     for i,letter in enumerate(message):
         if (letter in list_of_alphabet) == True:
-            return list_of_alphabet[(list_of_alphabet.index(letter) + shift) % 26], end=""
+            print(list_of_alphabet[(list_of_alphabet.index(letter) + shift) % 26],end="")
             continue
         else:
-            return " ", end=""
+            print(" ",end="")
+    return ""
     '''Caesar Cipher.
     10 points.
 
