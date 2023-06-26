@@ -72,7 +72,7 @@ def material_waste(total_material, material_units, num_jobs, job_consumption):
         
 
 def interest(principal, rate, periods):
-    return (principal + (principal + int((float(rate) * int(periods))))) // 1
+    return (principal + (principal * int((float(rate) * int(periods))))) // 1
     '''Interest.
     5 points.
 
@@ -102,9 +102,8 @@ def interest(principal, rate, periods):
     # Stay within the function. Only use the parameters as input. The function should return your answer.
 
 def body_mass_index(weight, height):
-    weight_conv = float(weight * 0.45)
-    height_separated = list(height.split("'"))
-    height_conv = (int(height_separated[0]) * 0.3048) + (int(height_separated[1]) * 0.0254)
+    weight_conv = float(weight / 2.205)
+    height_conv = (int(height[0]) / 3.281) + (int(height[1]) / 39.37)
     return float(weight_conv / (height_conv ** 2))
     '''Body Mass Index.
     5 points.
