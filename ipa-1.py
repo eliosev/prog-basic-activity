@@ -72,7 +72,7 @@ def material_waste(total_material, material_units, num_jobs, job_consumption):
         
 
 def interest(principal, rate, periods):
-    return (principal + (principal * int((float(rate) * int(periods))))) // 1
+    return int((principal + (principal * (float(rate) * int(periods)))) // 1)
     '''Interest.
     5 points.
 
