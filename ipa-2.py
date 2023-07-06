@@ -14,7 +14,7 @@ def shift_letter(letter, shift):
             else:
                 continue
     else:
-        return ""
+        return " "
     '''Shift Letter.
     5 points.
 
