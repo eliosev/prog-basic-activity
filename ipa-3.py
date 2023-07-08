@@ -112,6 +112,26 @@ def tic_tac_toe(board):
     pass
 
 def eta(first_stop, second_stop, route_map):
+    def eta(first_stop, second_stop, route_map):
+    result = []
+    flag = False
+    second_stops = ""
+    while second_stops != second_stop:
+        for key in route_map.keys():
+            if key[0] == first_stop:
+                first_stops = key[0]
+                second_stops = key[1]
+                result.append(route_map[first_stops,second_stops]["travel_time_mins"])
+                flag = True
+            elif flag == True:
+                first_stops = key[0]
+                second_stops = key[1]
+                result.append(route_map[first_stops,second_stops]["travel_time_mins"])
+            else:
+                continue
+            if second_stops == second_stop:
+                break
+    return sum(result)
     '''ETA.
     25 points.
 
