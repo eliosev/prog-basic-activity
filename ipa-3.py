@@ -6,6 +6,14 @@ This assignment will develop your ability to manipulate data.
 '''
 
 def relationship_status(from_member, to_member, social_graph):
+    if from_member in social_graph[to_member]["following"] and to_member in social_graph[from_member]["following"]:
+        return "friends"
+    elif from_member in social_graph[to_member]["following"]:
+        return "followed by"
+    elif to_member in social_graph[from_member]["following"]:
+        return "follower"
+    else:
+        return "no relationship"
     '''Relationship Status.
     20 points.
 
@@ -45,6 +53,37 @@ def relationship_status(from_member, to_member, social_graph):
 
 
 def tic_tac_toe(board):
+    combined_horizontal = [''.join(horizontal) for horizontal in board]
+    combined_vertical = [''.join(vertical) for vertical in zip(*board)]
+    combined_diagonal = [''.join(diagonal[i] for i, diagonal in enumerate(board)), ''.join(diagonal[-(i+1)] for i, diagonal in enumerate(board))]
+    if len(board) == 3:
+        if ("XXX" in combined_horizontal) or ("XXX" in combined_vertical) or ("XXX" in combined_diagonal):
+            return "X is the winner!"
+        elif ("OOO" in combined_horizontal) or ("OOO" in combined_vertical) or ("OOO" in combined_diagonal):
+            return "O is the winner!"
+        else:
+            return "NO WINNER"
+    elif len(board) == 4:
+        if ("XXXX" in combined_horizontal) or ("XXXX" in combined_vertical) or ("XXXX" in combined_diagonal):
+            return "X is the winner!"
+        elif ("OOOO" in combined_horizontal) or ("OOOO" in combined_vertical) or ("OOOO" in combined_diagonal):
+            return "O is the winner!"
+        else:
+            return "NO WINNER"
+    elif len(board) == 5:
+        if ("XXXXX" in combined_horizontal) or ("XXXXX" in combined_vertical) or ("XXXXX" in combined_diagonal):
+            return "X is the winner!"
+        elif ("OOOOO" in combined_horizontal) or ("OOOOO" in combined_vertical) or ("OOOOO" in combined_diagonal):
+            return "O is the winner!"
+        else:
+            return "NO WINNER"
+    elif len(board) == 6:
+        if ("XXXXXX" in combined_horizontal) or ("XXXXXX" in combined_vertical) or ("XXXXXX" in combined_diagonal):
+            return "X is the winner!"
+        elif ("OOOOOO" in combined_horizontal) or ("OOOOOO" in combined_vertical) or ("OOOOOO" in combined_diagonal):
+            return "O is the winner!"
+        else:
+            return "NO WINNER"
     '''Tic Tac Toe.
     25 points.
 
