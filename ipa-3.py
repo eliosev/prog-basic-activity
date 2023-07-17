@@ -112,7 +112,6 @@ def tic_tac_toe(board):
     pass
 
 def eta(first_stop, second_stop, route_map):
-    def eta(first_stop, second_stop, route_map):
     result = []
     flag = False
     second_stops = ""
